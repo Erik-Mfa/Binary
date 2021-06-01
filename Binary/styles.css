@@ -1,0 +1,44 @@
+
+.nav{
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.75rem;
+    margin-inline: 50px;
+    text-align: center;
+}
+
+.navbar-brand{
+    margin-left: 40px;
+}
+
+.position-right{
+    right: 100px;
+    width: 700px;
+}
+
+::placeholder{
+    font-family: Source Code Pro;
+}
+
+main{
+    background-color: #fafafa;
+    background-image:url("imagens/01.png");
+    background-size: 5%;
+}
+
+.drop{
+    font-size: 1.75rem !important;
+}
+
+.btn{
+    font-family: Source Code Pro;
+}
+
+footer{
+    font-family: 'Roboto Mono', monospace;
+}
+
+li{
+    list-style: none;
+}
+
+

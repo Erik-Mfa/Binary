@@ -1,4 +1,4 @@
-<?php include_once "database/wearing.php"?>
+<?php include_once "../database/wearing.php"?>
 <!DOCTYPE html>
 <html lang="pr-br">
 <head>
@@ -6,21 +6,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Binary</title>
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,200&display=swap" rel="stylesheet">
 </head>
-<body>
 <main>
+<body>
 <!--NAV-->
 <nav class="navbar navbar-expand-lg navbar-light bg-white ">
-  <a class="navbar-brand" href="index.php">
-    <img src="imagens/logo_Opcional.png" width="280" height="100" alt="">
+  <a class="navbar-brand" href="../index.php">
+    <img src="../imagens/logo_Opcional.png" width="280" height="100" alt="">
   </a> 
-  
   <ul class="nav-color nav">
     <li class="nav-item">
       <div class="dropdown">
@@ -28,11 +27,11 @@
           SKATES
         </a>      
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="/skate/truck.php">TRUCKS</a>
-          <a class="dropdown-item" href="/skate/rolamento.php">ROLAMENTOS</a>
-          <a class="dropdown-item" href="/skate/roda.php">RODAS</a>
-          <a class="dropdown-item" href="/skate/lixa.php">LIXAS</a>
-          <a class="dropdown-item" href="/skate/shape.php">SHAPES</a>
+          <a class="dropdown-item" href="truck.php">TRUCKS</a>
+          <a class="dropdown-item" href="rolamento.php">ROLAMENTOS</a>
+          <a class="dropdown-item" href="roda.php">RODAS</a>
+          <a class="dropdown-item" href="lixa.php">LIXAS</a>
+          <a class="dropdown-item" href="shape.php">SHAPES</a>
         </div>
       </div>
     </li>
@@ -65,62 +64,35 @@
   </div>
 </nav>
 <!--FIM NAV-->
-<?php echo var_dump($path)?>
-
-<div class="container">
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="imagens/imagem_Caroussel3.jpg" alt="Primeiro Slide" height="600" >
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="imagens/imagem_Caroussel1.jpg" alt="Segundo Slide" height="600"> 
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="imagens/imagem_Caroussel2.jpg" alt="Terceiro Slide" height="600">
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only"></span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only"></span>
-    </a>
-  </ul>
-  </div>
-</div>
 
 <div class="container">
   <div class="row">
     <div class="col">
       <a href="details.php">
-        <img class="img-fluid " src="<?php echo "./imagens/".$imagem[0].".jpg"?>">
+        <img class="img-fluid " src="<?php echo "../imagens/".$imagemTruck[0].".jpg"?>">
       </a>
       <a href="details.php">
-        <img class="img-fluid " src="<?php echo "./imagens/".$imagem[1].".jpg"?>">
-      </a>
-    </div>
-    <div class="col">
-      <a href="details.php">
-        <img class="img-fluid" src="<?php echo "./imagens/".$imagem[2].".jpg"?>">
-      </a>
-      <a href="details.php">
-        <img class="img-fluid" src="<?php echo "./imagens/".$imagem[3].".jpg"?>">
+        <img class="img-fluid " src="<?php echo "../imagens/".$imagemTruck[1].".jpg"?>">
       </a>
     </div>
     <div class="col">
       <a href="details.php">
-       <img class="img-fluid" src="<?php echo "./imagens/".$imagem[4].".jpg"?>">
+        <img class="img-fluid" src="<?php echo "../imagens/".$imagemTruck[2].".jpg"?>">
       </a>
       <a href="details.php">
-       <img class="img-fluid" src="<?php echo "./imagens/".$imagem[5].".jpg"?>">
+        <img class="img-fluid" src="<?php echo "../imagens/".$imagemTruck[3].".jpg"?>">
+      </a>
+    </div>
+    <div class="col">
+      <a href="details.php">
+       <img class="img-fluid" src="<?php echo "../imagens/".$imagemTruck[4].".jpg"?>">
+      </a>
+      <a href="details.php">
+       <img class="img-fluid" src="<?php echo "../imagens/".$imagemTruck[5].".jpg"?>">
       </a>
     </div>
   </div>
 </div>
-
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -149,7 +121,7 @@
     </div>
     <div class="col-4 mt-4">
       <h4>Aceitamos:</h4>
-      <img class="" src="imagens/cartao_Bandeiras.png" width="30%">
+      <img class="" src="../imagens/cartao_Bandeiras.png" width="30%">
     </div>
   </div>
 </div>

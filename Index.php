@@ -20,7 +20,6 @@
   <a class="navbar-brand" href="index.php">
     <img src="imagens/logo_Opcional.png" width="280" height="100" alt="">
   </a> 
-  
   <ul class="nav-color nav">
     <li class="nav-item">
       <div class="dropdown">
@@ -63,9 +62,12 @@
       <button class="btn btn-outline-success my-2" type="submit">Buscar</button>
     </form>
   </div>
+
+  <a href="login.php">Login</a>
+  
 </nav>
-<!--FIM NAV-->
-<?php echo var_dump($path)?>
+
+<!--FIM NAV------------------------------------------------------------------------------------------>
 
 <div class="container">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -91,7 +93,9 @@
   </ul>
   </div>
 </div>
-
+<?php 
+shuffle($imagem);
+?>
 <div class="container">
   <div class="row">
     <div class="col">
@@ -126,7 +130,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </main>
-<!--INICIO FOOTER-->
+<!--INICIO FOOTER------------------------------------------------------------------------------------------>
 <footer>
 <div class="container">
   <div class="row">

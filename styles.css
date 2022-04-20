@@ -37,6 +37,10 @@ footer{
     font-family: 'Roboto Mono', monospace;
 }
 
+form{
+    font-family: 'Roboto Mono', monospace;
+}
+
 li{
     list-style: none;
 }

@@ -11,7 +11,7 @@ $senha 	 = $_POST['senha'];
 
 $sql = "SELECT id, nome, nivel FROM usuarios_tb WHERE (usuario = '".$usuario ."') AND (senha = '". $senha ."') LIMIT 1";
 $query = mysqli_query($conn, $sql);
-echo $sql;
+
 
 
   if (mysqli_num_rows($query) != 1) {
@@ -19,13 +19,11 @@ echo $sql;
   } else {
       $resultado = mysqli_fetch_assoc($query);
 
-      if (!isset($_SESSION)) session_start();
+      session_start();
 
-      $_SESSION['userId'] = $resultado['id'];
       $_SESSION['userName'] = $resultado['nome'];
       $_SESSION['userLevel'] = $resultado['nivel'];
 
-      // Redireciona o visitante
       header("Location: index.php"); exit;
 
   }

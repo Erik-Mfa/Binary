@@ -1,4 +1,6 @@
-<?php include_once "database/wearing.php"?>
+<?php 
+include_once "database/wearing.php";
+?>
 <!DOCTYPE html>
 <html lang="pr-br">
 <head>
@@ -14,6 +16,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,200&display=swap" rel="stylesheet">
 </head>
 <body>
+<?php 
+      session_start();
+      if(isset($_SESSION['userName'])){
+         $adm = $_SESSION['userLevel'];
+    }
+?>
 <main>
 <!--NAV-->
 <nav class="navbar navbar-expand-lg navbar-light bg-white ">
@@ -62,8 +70,15 @@
       <button class="btn btn-outline-success my-2" type="submit">Buscar</button>
     </form>
   </div>
-
-  <a href="login.php">Login</a>
+<?php
+  if(isset($_SESSION['userName'])){
+    if($adm == 2){
+      echo "<a href='admin.php' class='btn btn-outline-success my-2'>Admin</button>";
+    }
+  }
+?>
+  <a href="login.php" class="btn btn-outline-success my-2">Login</a>
+  <a href="logout.php" class="btn btn-outline-success my-2">Logout</a>
   
 </nav>
 

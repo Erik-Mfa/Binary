@@ -27,14 +27,13 @@
                     <label for="txUsuario" class="col-4 col-form-label text-right">Usuário</label> 
                     <input class="border border-success" type="text" name="usuario" id="txUsuario" maxlength="30">
                 </div>
-                <div>
-                    <buttom type="submit" class="btn btn-primary">Enviar</buttom>
+                <div class="float-right">
+                    <input type="submit" value="Enviar" class="btn btn-outline-success">
                 </div>
                 <div class="form-floating">  
                     <label for="txSenha" class="col-4 col-form-label text-right">Senha</label>
                     <input class="border border-success" type="password" name="senha" id="txSenha" maxlength="60">
                 </div>
-            
     </form>
 </div>
 

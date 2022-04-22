@@ -24,62 +24,68 @@ include_once "database/wearing.php";
 ?>
 <main>
 <!--NAV-->
-<nav class="navbar navbar-expand-lg navbar-light bg-white ">
+<nav class="navbar navbar-light bg-white ">
   <a class="navbar-brand" href="index.php">
     <img src="imagens/logo_Opcional.png" width="280" height="100" alt="">
   </a> 
-  <ul class="nav-color nav">
-    <li class="nav-item">
-      <div class="dropdown">
-        <a class="btn text-dark drop" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          SKATES
-        </a>      
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="/skate/truck.php">TRUCKS</a>
-          <a class="dropdown-item" href="/skate/rolamento.php">ROLAMENTOS</a>
-          <a class="dropdown-item" href="/skate/roda.php">RODAS</a>
-          <a class="dropdown-item" href="/skate/lixa.php">LIXAS</a>
-          <a class="dropdown-item" href="/skate/shape.php">SHAPES</a>
+  <div>
+    <ul class="nav-color nav">
+      <li class="nav-item">
+        <div class="dropdown">
+          <a class="btn text-dark drop" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            SKATES
+          </a>      
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/skate/truck.php">TRUCKS</a>
+            <a class="dropdown-item" href="/skate/rolamento.php">ROLAMENTOS</a>
+            <a class="dropdown-item" href="/skate/roda.php">RODAS</a>
+            <a class="dropdown-item" href="/skate/lixa.php">LIXAS</a>
+            <a class="dropdown-item" href="/skate/shape.php">SHAPES</a>
+          </div>
         </div>
-      </div>
-    </li>
-    <li class="nav-item">
-      <div class="dropdown">
-        <a class="btn text-dark drop" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          ROUPAS
-        </a>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">BONÉS</a>
-          <a class="dropdown-item" href="#">CAMISETAS</a>
-          <a class="dropdown-item" href="#">CAMISAS</a>
-          <a class="dropdown-item" href="#">MOLETONS</a>
+      </li>
+      <li class="nav-item">
+        <div class="dropdown">
+          <a class="btn text-dark drop" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            ROUPAS
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="#">BONÉS</a>
+            <a class="dropdown-item" href="#">CAMISETAS</a>
+            <a class="dropdown-item" href="#">CAMISAS</a>
+            <a class="dropdown-item" href="#">MOLETONS</a>
+          </div>
         </div>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-dark" href="#">TÊNIS</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-dark" href="#">ACESSÓRIOS</a>
-    </li>
-  </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="#">TÊNIS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="#">ACESSÓRIOS</a>
+      </li>
+    </ul>
+  </div>
 
   <div>
-    <form id="pesquisa" class="position-right form-inline my-2">
-      <input class="form-control mr-sm-2 col-6" type="search" placeholder="O que você deseja?" aria-label="Pesquisar">
+    <form id="pesquisa" class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="O que você deseja?" aria-label="Pesquisar">
       <button class="btn btn-outline-success my-2" type="submit">Buscar</button>
     </form>
   </div>
-<?php
-  if(isset($_SESSION['userName'])){
-    if($adm == 2){
-      echo "<a href='admin.php' class='btn btn-outline-success my-2'>Admin</button>";
+  <div class="float-right">
+    <?php
+      if(isset($_SESSION['userName'])){
+        if($adm == 2){
+          echo "<a href='admin.php' class='btn btn-outline-success my-2'>Admin</button>";
+        }
+        echo "<a href='logout.php' class='btn btn-outline-success my-2'>Logout</a>"; 
+    }else{
+      echo "<a href='login.php' class='btn btn-outline-success my-2'>Login</a>";
     }
-  }
-?>
-  <a href="login.php" class="btn btn-outline-success my-2">Login</a>
-  <a href="logout.php" class="btn btn-outline-success my-2">Logout</a>
-  
+    ?>
+    
+    
+  </div>
 </nav>
 
 <!--FIM NAV------------------------------------------------------------------------------------------>
@@ -95,6 +101,9 @@ include_once "database/wearing.php";
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="imagens/imagem_Caroussel2.jpg" alt="Terceiro Slide" height="600">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="imagens/imagem_Caroussel4.jpg" alt="Quarto Slide" height="600">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

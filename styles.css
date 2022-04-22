@@ -10,11 +10,6 @@
     margin-left: 40px;
 }
 
-.position-right{
-    right: 100px;
-    width: 700px;
-}
-
 ::placeholder{
     font-family: Source Code Pro;
 }

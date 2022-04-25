@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Binary</title>
+<title>Binary - Login</title>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -21,7 +21,7 @@
 </nav>
 
 <div class="d-flex justify-content-center">
-    <form action="validation.php"  method="post">
+    <form action="./database/login_db.php"  method="post">
             <h1 class="cor">Preencha os dados de acesso</h1>
                 <div class="form-floating">   
                     <label for="txUsuario" class="col-4 col-form-label text-right">Usuário</label> 

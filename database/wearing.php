@@ -2,9 +2,9 @@
 include_once 'conn.php';
 
 $conn = conectar();
-$sql = "SELECT * FROM roupas_tb";
+$sqlRoupas = "SELECT * FROM roupas_tb";
 
-if($result = mysqli_query($conn, $sql)){
+if($result = mysqli_query($conn, $sqlRoupas)){
     while($linha = mysqli_fetch_array($result)){
         $id[] = $linha['id'];
         $tipo[] = $linha['tipo'];

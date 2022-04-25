@@ -1,18 +1,16 @@
 <?php
-include_once 'database/conn.php';
+include_once 'conn.php';
 
 $conn = conectar();
 $usuario = $_POST['usuario'];
 $senha 	 = $_POST['senha'];
 
   if (!empty($_POST) AND (empty($_POST['usuario']) OR empty($_POST['senha']))) {
-      header("Location: login.php"); exit;
+      header("Location: ../login.php"); exit;
   }
 
 $sql = "SELECT id, nome, nivel, ativo FROM usuarios_tb WHERE (usuario = '".$usuario ."') AND (senha = '". $senha ."') LIMIT 1";
 $query = mysqli_query($conn, $sql);
-
-
 
   if (mysqli_num_rows($query) != 1) {
       echo "Login inválido!"; exit;
@@ -25,7 +23,6 @@ $query = mysqli_query($conn, $sql);
       $_SESSION['userLevel'] = $resultado['nivel'];
       $_SESSION['userStatus'] = $resultado['ativo'];
 
-      header("Location: index.php"); exit;
-
+      header("Location: ../index.php"); exit;
   }
-?>
+  ?>

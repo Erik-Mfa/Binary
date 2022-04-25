@@ -36,8 +36,23 @@ form{
     font-family: 'Roboto Mono', monospace;
 }
 
+p{
+    font-family: 'Source Code Pro', monospace;
+}
+
 li{
     list-style: none;
 }
+
+.fonte{
+    font-family: 'Source Code Pro', monospace;
+}
+
+.margin-nav{
+    margin-left: 8px;
+}
+
+
+
 
 

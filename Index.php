@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include_once "database/wearing.php";
 ?>
 <!DOCTYPE html>
@@ -16,21 +17,20 @@ include_once "database/wearing.php";
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,200&display=swap" rel="stylesheet">
 </head>
 <body>
-<?php 
-      session_start();
-      if(isset($_SESSION['userName'])){
-         $adm = $_SESSION['userLevel'];
-    }
-?>
+    <?php 
+        if(isset($_SESSION['userName'])){
+          $adm = $_SESSION['userLevel'];
+      }
+    ?>
 <main>
 <!--NAV-->
 <nav class="navbar navbar-light bg-white ">
   <a class="navbar-brand" href="index.php">
     <img src="imagens/logo_Opcional.png" width="280" height="100" alt="">
   </a> 
-  <div>
-    <ul class="nav-color nav">
-      <li class="nav-item">
+  <div class="nav-item">
+    <ul class="nav">
+      <li>
         <div class="dropdown">
           <a class="btn text-dark drop" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             SKATES
@@ -44,9 +44,9 @@ include_once "database/wearing.php";
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <div class="dropdown">
-          <a class="btn text-dark drop" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li>
+        <div class="dropdown ">
+          <a class="btn text-dark drop margin-nav" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             ROUPAS
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -57,35 +57,42 @@ include_once "database/wearing.php";
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-dark" href="#">TÊNIS</a>
+      <li>
+        <a class="nav-link text-dark margin-nav" href="#">TÊNIS</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-dark" href="#">ACESSÓRIOS</a>
+      <li>
+        <a class="nav-link text-dark margin-nav" href="#">ACESSÓRIOS</a>
       </li>
     </ul>
   </div>
 
   <div>
     <form id="pesquisa" class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="O que você deseja?" aria-label="Pesquisar">
+      <input class="form-control mr-sm-2" type="search" placeholder="Qual o seu desejo? " aria-label="Pesquisar">
       <button class="btn btn-outline-success my-2" type="submit">Buscar</button>
     </form>
   </div>
   <div class="float-right">
-    <?php
-      if(isset($_SESSION['userName'])){
-        if($adm == 2){
-          echo "<a href='admin.php' class='btn btn-outline-success my-2'>Admin</button>";
-        }
-        echo "<a href='logout.php' class='btn btn-outline-success my-2'>Logout</a>"; 
-    }else{
-      echo "<a href='login.php' class='btn btn-outline-success my-2'>Login</a>";
+    <?php 
+    if(isset($_SESSION['userName'])){
+      echo "<p>Olá," . $_SESSION['userName'] ."!</p>";
     }
     ?>
-    
-    
+      <div class="d-flex justify-content-center">
+        <?php
+          if(isset($_SESSION['userName'])){
+            
+            if($adm == 2){
+              echo "<a href='admin.php' class='btn btn-outline-success my-2'>Admin</button>";
+            }
+            echo "<a href='./database/logout.php' class='btn btn-outline-success my-2 margin-nav'>Logout</a>"; 
+        }else{
+          echo "<a href='login.php' class='btn btn-outline-success my-2'>Login</a>";
+        }
+        ?>
+      </div>
   </div>
+  
 </nav>
 
 <!--FIM NAV------------------------------------------------------------------------------------------>
@@ -117,9 +124,9 @@ include_once "database/wearing.php";
   </ul>
   </div>
 </div>
-<?php 
-shuffle($imagem);
-?>
+    <?php 
+    shuffle($imagem);
+    ?>
 <div class="container">
   <div class="row">
     <div class="col">
@@ -177,7 +184,7 @@ shuffle($imagem);
     </div>
     <div class="col-4 mt-4">
       <h4>Aceitamos:</h4>
-      <img class="" src="imagens/cartao_Bandeiras.png" width="30%">
+      <img class="margin-left: 3rem" src="imagens/cartao_Bandeiras.png" width="20%">
     </div>
   </div>
 </div>

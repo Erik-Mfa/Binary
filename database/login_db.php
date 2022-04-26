@@ -9,7 +9,7 @@ $senha 	 = $_POST['senha'];
       header("Location: ../login.php"); exit;
   }
 
-$sql = "SELECT id, nome, nivel, ativo FROM usuarios_tb WHERE (usuario = '".$usuario ."') AND (senha = '". $senha ."') LIMIT 1";
+$sql = "SELECT id, nome, nivel FROM usuarios_tb WHERE (usuario = '".$usuario ."') AND (senha = '". $senha ."') LIMIT 1";
 $query = mysqli_query($conn, $sql);
 
   if (mysqli_num_rows($query) != 1) {
@@ -21,7 +21,6 @@ $query = mysqli_query($conn, $sql);
 
       $_SESSION['userName'] = $resultado['nome'];
       $_SESSION['userLevel'] = $resultado['nivel'];
-      $_SESSION['userStatus'] = $resultado['ativo'];
 
       header("Location: ../index.php"); exit;
   }

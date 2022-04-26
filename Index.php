@@ -75,7 +75,7 @@ include_once "database/wearing.php";
   <div class="float-right">
     <?php 
     if(isset($_SESSION['userName'])){
-      echo "<p>Olá," . $_SESSION['userName'] ."!</p>";
+      echo "<h4 class='fonte'>Olá," . $_SESSION['userName'] ."!</h4>";
     }
     ?>
       <div class="d-flex justify-content-center">

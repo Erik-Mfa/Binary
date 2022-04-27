@@ -24,65 +24,79 @@
     <h1>Seja bem vindo, <?php echo $_SESSION['userName'];?>!</h1>
     <h4>Menu do administrador:</h4>
 </div>
-
-<div class="border">
-    <form action="database/newUser.php"  method="post">
-            <h1 class="cor">Cadastro de usuário: </h1>
-                <div class="margin-left: 1rem">
-                    <div>  
-                        <label for="newNome" text-right">Nome completo:</label>
-                        <input class="border border-success" type="text" name="newNome" maxlength="60">
+<div>
+    <div class="border">
+        <form action="database/newUser.php"  method="post">
+                <h1 class="cor ml-1">Cadastro de usuário: </h1>
+                    <div class="ml-2">
+                        <div>  
+                            <label for="newNome" text-right">Nome completo:</label>
+                            <input class="border border-success" type="text" name="newNome" maxlength="60">
+                        </div>
+                        <div>   
+                            <label for="newUsuario" text-right">Usuário:</label> 
+                            <input class="border border-success" type="text" name="newUsuario" maxlength="30">
+                        </div>
+                        <div>  
+                            <label for="newSenha" text-right">Senha:</label>
+                            <input class="border border-success" type="password" name="newSenha" maxlength="60">
+                        </div>
+                        <div>  
+                            <label for="newNivel" text-right">Nível de acesso:</label>
+                            <input class="border border-success" type="number" name="newNivel" maxlength="5">
+                        </div>
+                        <div>  
+                            <label for="newEmail" text-right">Email:</label>
+                            <input class="border border-success" type="email" name="newEmail" maxlength="30">
+                        </div>
+                        <div>
+                            <button type="submit" name="cadastrarUsuario" class="btn btn-outline-success">Enviar:</button>
+                        </div>
                     </div>
-                    <div>   
-                        <label for="newUsuario" text-right">Usuário:</label> 
-                        <input class="border border-success" type="text" name="newUsuario" maxlength="30">
+        </form>
+    </div>
+    <div class="my-5 border">
+        <form action="database/newProduct.php"  method="post" enctype="multipart/form-data">
+                    <h1 class="cor ml-1">Cadastro de produto: </h1>
+                    <div class="ml-2">
+                        <div>  
+                            <label for="newTipo" text-right">Tipo do produto:</label>
+                            <input class="border border-success" type="text" name="newTipo" maxlength="15">
+                        </div>
+                        <div>   
+                            <label for="newMarca" text-right">Marca:</label> 
+                            <input class="border border-success" type="text" name="newMarca" maxlength="20">
+                        </div>
+                        <div>  
+                            <label for="newPreco" text-right">Preço:</label>
+                            <input class="border border-success" type="number" name="newPreco">
+                        </div>
+                        <div>  
+                            <label for="newTamanho" text-right">Tamanho:</label>
+                            <input class="border border-success" type="text" name="newTamanho" maxlength="5">
+                        </div>
+                        <div>  
+                            <label for="newNome" text-right">Nome:</label>
+                            <input class="border border-success" type="text" name="newNome" maxlength="50">
+                        </div>
+                        <div class="mb-3 col-3">  
+                            <input class="border form-control form-control-sm" type="file" name="newImagem">
+                        </div>
+                        <div>
+                            <button type="submit" name="cadastrarProduto" class="btn btn-outline-success">Enviar:</button>
+                        </div>
+                        <div class="mt-2">
+                            <?php
+                            if(isset($_GET['mensagem'])){
+                                include_once 'errorMessage.php';
+                                $_GET['mensagem'];
+                                echo mostraErro($_GET['mensagem']);
+                            }
+                            ?>
+                        </div>
                     </div>
-                    <div>  
-                        <label for="newSenha" text-right">Senha:</label>
-                        <input class="border border-success" type="password" name="newSenha" maxlength="60">
-                    </div>
-                    <div>  
-                        <label for="newNivel" text-right">Nível de acesso:</label>
-                        <input class="border border-success" type="number" name="newNivel" maxlength="5">
-                    </div>
-                    <div>  
-                        <label for="newEmail" text-right">Email:</label>
-                        <input class="border border-success" type="email" name="newEmail" maxlength="30">
-                    </div>
-                    <div>
-                        <button type="submit" name="cadastrarUsuario" class="btn btn-outline-success">Enviar:</button>
-                    </div>
-                </div>
-    </form>
-</div>
-<div class="border">
-    <form action="database/newProduct.php"  method="post" enctype="multipart/form-data">
-            <h1 class="cor">Cadastro de produto: </h1>
-                <div class="margin-left: 1rem">
-                    <div>  
-                        <label for="newTipo" text-right">Tipo do produto:</label>
-                        <input class="border border-success" type="text" name="newTipo" maxlength="15">
-                    </div>
-                    <div>   
-                        <label for="newMarca" text-right">Marca:</label> 
-                        <input class="border border-success" type="text" name="newMarca" maxlength="20">
-                    </div>
-                    <div>  
-                        <label for="newPreco" text-right">Preço:</label>
-                        <input class="border border-success" type="number" name="newPreco">
-                    </div>
-                    <div>  
-                        <label for="newTamanho" text-right">Tamanho:</label>
-                        <input class="border border-success" type="text" name="newTamanho" maxlength="5">
-                    </div>
-                    <div>  
-                        <input class="border" type="file" name="newImagem" id="newImagem">
-                    </div>
-                    <div>
-                        <button type="submit" name="cadastrarProduto" class="btn btn-outline-success">Enviar:</button>
-                    </div>
-                </div>
-    </form>
+             </form>
+    </div>
 </div>
 </body>
 </html>

@@ -70,26 +70,26 @@
   <div class="row">
     <div class="col">
       <a href="details.php">
-        <img class="img-fluid " src="<?php echo "../imagens/".$imagemRoda[0].".jpg"?>">
+        <img class="img-fluid " src="<?php echo "../imagens/".$imagemRoda[0]?>">
       </a>
       <a href="details.php">
-        <img class="img-fluid " src="<?php echo "../imagens/".$imagemRoda[1].".jpg"?>">
-      </a>
-    </div>
-    <div class="col">
-      <a href="details.php">
-        <img class="img-fluid" src="<?php echo "../imagens/".$imagemRoda[2].".jpg"?>">
-      </a>
-      <a href="details.php">
-        <img class="img-fluid" src="<?php echo "../imagens/".$imagemRoda[3].".jpg"?>">
+        <img class="img-fluid " src="<?php echo "../imagens/".$imagemRoda[1]?>">
       </a>
     </div>
     <div class="col">
       <a href="details.php">
-       <img class="img-fluid" src="<?php echo "../imagens/".$imagemRoda[4].".jpg"?>">
+        <img class="img-fluid" src="<?php echo "../imagens/".$imagemRoda[2]?>">
       </a>
       <a href="details.php">
-       <img class="img-fluid" src="<?php echo "../imagens/".$imagemRoda[5].".jpg"?>">
+        <img class="img-fluid" src="<?php echo "../imagens/".$imagemRoda[3]?>">
+      </a>
+    </div>
+    <div class="col">
+      <a href="details.php">
+       <img class="img-fluid" src="<?php echo "../imagens/".$imagemRoda[4]?>">
+      </a>
+      <a href="details.php">
+       <img class="img-fluid" src="<?php echo "../imagens/".$imagemRoda[5]?>">
       </a>
     </div>
   </div>

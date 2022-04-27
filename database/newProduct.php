@@ -1,25 +1,26 @@
 <?php
 include_once 'conn.php';
 
-  if(isset($_POST['cadastrarProduto'])){
-    $remove = array(".jpg", ".jpeg", ".png");
-    $imagemNameExt = $_FILES['newImagem']['name'];
-    $imagemName = str_replace($remove, "", $imagemNameExt);
+  if(!isset($_POST['cadastrarProduto']) || empty($_POST['newTipo']) || empty($_POST['newMarca']) || empty($_POST['newPreco']) || empty($_POST['newTamanho']) || empty($_POST['newNome']) || empty($_FILES['newImagem'])){
+    header('location:../admin.php?mensagem=cadastroembranco');
+  } else {
+    $erro = 0;
 
     $wearingType = $_POST['newTipo'];
     $wearingBrand = $_POST['newMarca'];
     $wearingPrice = $_POST['newPreco'];
     $wearingSize = $_POST['newTamanho'];
-    $wearingImage = $imagemName;
+    $wearingName = $_POST['newNome'];
+    $wearingImage = $_FILES['newImagem']['name'];
 
     $conn = conectar();
-    $wearingSql = "INSERT INTO roupas_tb (tipo, marca, preco, tamanho, imagem) 
-    VALUES ('$wearingType', '$wearingBrand', '$wearingPrice', '$wearingSize', '$wearingImage')";
+    $wearingSql = "INSERT INTO roupas_tb (tipo, marca, preco, tamanho, imagem, nome) 
+    VALUES ('$wearingType', '$wearingBrand', '$wearingPrice', '$wearingSize', '$wearingImage', '$wearingName')";
 
     $result = mysqli_query($conn, $wearingSql);
 
     if (mysqli_affected_rows($conn) > 0){
-      echo "Deu boa ";
+      header('location:../admin.php?mensagem=cadastrosucesso');
     }
 
     /*********************cadastro de imagens ***********************/
@@ -32,28 +33,26 @@ include_once 'conn.php';
     
     //verifica se é uma imagem
     if($check !== false){
-        echo "É uma imagem da fato - " . $check['mime'] . ". ";
         $ok = 1;
     } else{
-        echo "Não é uma imagem. ";
         $ok = 0;
     }
 
     //verifica se a imagem ja existe
     if (file_exists($targetFile)) {
-      echo "A imagem ja existe. ";
+      header('location:../admin.php?mensagem=imagemexiste');
       $ok = 0;
     }
 
     //define o tamanho maximo do arquivo
     if ($_FILES['newImagem']['size'] > 500000) {
-      echo "Arquivo muito grande.";
+      header('location:../admin.php?mensagem=imagemgrande');
       $ok = 0;
     }
 
     //define os tipos de arquivos permitidos
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-      echo "Apenas arquivos JPG, JPEG e PNG permitidos. ";
+      header('location:../admin.php?mensagem=formatonaopermitido');
       $ok = 0;
     }
 
@@ -64,12 +63,11 @@ include_once 'conn.php';
       } else {
         if (move_uploaded_file($_FILES['newImagem']['tmp_name'], $targetFile)) {
           header("Location: ../admin.php");
-          echo "O arquivo ". htmlspecialchars( basename( $_FILES['newImagem']['name'])). " foi enviado com sucesso.";
         } else {
-          header("Location: ../admin.php");
-          echo "Houve um erro no upload do arquivo.";
+          header('location:../admin.php?mensagem=erroenvioimagem');
         }
     }
-}
+  }
+
 
 ?>

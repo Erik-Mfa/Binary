@@ -131,26 +131,26 @@ include_once "database/wearing.php";
   <div class="row">
     <div class="col">
       <a href="details.php">
-        <img class="img-fluid " src="<?php echo "./imagens/".$imagem[0].".jpg"?>">
+        <img class="img-fluid " src="<?php echo "./imagens/".$imagem[0]?>">
       </a>
       <a href="details.php">
-        <img class="img-fluid " src="<?php echo "./imagens/".$imagem[1].".jpg"?>">
-      </a>
-    </div>
-    <div class="col">
-      <a href="details.php">
-        <img class="img-fluid" src="<?php echo "./imagens/".$imagem[2].".jpg"?>">
-      </a>
-      <a href="details.php">
-        <img class="img-fluid" src="<?php echo "./imagens/".$imagem[3].".jpg"?>">
+        <img class="img-fluid " src="<?php echo "./imagens/".$imagem[1]?>">
       </a>
     </div>
     <div class="col">
       <a href="details.php">
-       <img class="img-fluid" src="<?php echo "./imagens/".$imagem[4].".jpg"?>">
+        <img class="img-fluid" src="<?php echo "./imagens/".$imagem[2]?>">
       </a>
       <a href="details.php">
-       <img class="img-fluid" src="<?php echo "./imagens/".$imagem[5].".jpg"?>">
+        <img class="img-fluid" src="<?php echo "./imagens/".$imagem[3]?>">
+      </a>
+    </div>
+    <div class="col">
+      <a href="details.php">
+       <img class="img-fluid" src="<?php echo "./imagens/".$imagem[4]?>">
+      </a>
+      <a href="details.php">
+       <img class="img-fluid" src="<?php echo "./imagens/".$imagem[5]?>">
       </a>
     </div>
   </div>

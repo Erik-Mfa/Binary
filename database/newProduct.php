@@ -2,8 +2,9 @@
 include_once 'conn.php';
 
   if(!isset($_POST['cadastrarProduto']) || empty($_POST['newTipo']) || empty($_POST['newMarca']) || empty($_POST['newPreco']) || empty($_POST['newTamanho']) || empty($_POST['newNome']) || empty($_FILES['newImagem'])){
-    header('location:../admin.php?mensagem=cadastroembranco');
+    header('location:../admin.php?mensagemProduto=cadastroembranco');
   } else {
+    $conn = conectar();
     $erro = 0;
 
     $wearingType = $_POST['newTipo'];
@@ -12,16 +13,6 @@ include_once 'conn.php';
     $wearingSize = $_POST['newTamanho'];
     $wearingName = $_POST['newNome'];
     $wearingImage = $_FILES['newImagem']['name'];
-
-    $conn = conectar();
-    $wearingSql = "INSERT INTO roupas_tb (tipo, marca, preco, tamanho, imagem, nome) 
-    VALUES ('$wearingType', '$wearingBrand', '$wearingPrice', '$wearingSize', '$wearingImage', '$wearingName')";
-
-    $result = mysqli_query($conn, $wearingSql);
-
-    if (mysqli_affected_rows($conn) > 0){
-      header('location:../admin.php?mensagem=cadastrosucesso');
-    }
 
     /*********************cadastro de imagens ***********************/
     $targetDir = "../imagens/";
@@ -40,34 +31,64 @@ include_once 'conn.php';
 
     //verifica se a imagem ja existe
     if (file_exists($targetFile)) {
-      header('location:../admin.php?mensagem=imagemexiste');
+      $fileError = 0;
       $ok = 0;
     }
 
     //define o tamanho maximo do arquivo
     if ($_FILES['newImagem']['size'] > 500000) {
-      header('location:../admin.php?mensagem=imagemgrande');
+      $fileError = 1;
       $ok = 0;
     }
 
     //define os tipos de arquivos permitidos
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-      header('location:../admin.php?mensagem=formatonaopermitido');
+      $fileError = 2;
       $ok = 0;
     }
 
-    //se passou por todas as verificações ele faz o upload da imagem
+    //se passou pelas verificações ele faz o upload da imagem
     if ($ok == 0) {
-      echo "Seu arquivo não foi enviado.";
       header("Location: ../admin.php");
       } else {
         if (move_uploaded_file($_FILES['newImagem']['tmp_name'], $targetFile)) {
-          header("Location: ../admin.php");
+          $ok = 2;
         } else {
-          header('location:../admin.php?mensagem=erroenvioimagem');
+          $fileError = 3;
         }
     }
-  }
+
+    switch($fileError){
+      case'0':
+        header('location:../admin.php?mensagemProduto=imagemexiste');
+        break;
+      case'1':
+        header('location:../admin.php?mensagemProduto=imagemgrande');
+        break;
+      case'2':
+        header('location:../admin.php?mensagemProduto=formatonaopermitido');
+        break;
+      case'3':
+        header('location:../admin.php?mensagemProduto=erroenvioimagem');
+        break;
+    }
+
+    //se enviou a imagem ele faz o cadastro no banco de dados
+    if($ok == 2){
+    $wearingSql = "INSERT INTO roupas_tb (tipo, marca, preco, tamanho, imagem, nome) 
+    VALUES ('$wearingType', '$wearingBrand', '$wearingPrice', '$wearingSize', '$wearingImage', '$wearingName')";
+
+    $result = mysqli_query($conn, $wearingSql);
+
+    if (mysqli_affected_rows($conn) > 0){
+      header('location:../admin.php?mensagemProduto=cadastrosucesso');
+    } else {
+      header('location:../admin.php?mensagemProduto=cadastrofracasso');
+    }
+  } 
+  
+}
+
 
 
 ?>

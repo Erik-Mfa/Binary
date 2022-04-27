@@ -1,5 +1,5 @@
 <?php
-function mostraErro($mensagem){
+function mostraMensagem($mensagem){
     switch($mensagem){
         case 'cadastroembranco':
             $retorno = "<p class='fonte'>Campos em branco!</p>";
@@ -11,7 +11,7 @@ function mostraErro($mensagem){
             $retorno = "<p class='fonte'>O arquivo escolhido não é uma imagem!</p>";
             break;
         case 'imagemexiste':
-            $retorno = "<p class='fonte'>A imagem ja existe!</p>";
+            $retorno = "<p class='fonte'>A imagem escolhida já existe!</p>";
             break;
         case 'imagemgrande':
             $retorno = "<p class='fonte'>A imagem ultrapassa o limite de tamanho!</p>";
@@ -21,6 +21,9 @@ function mostraErro($mensagem){
             break;
         case 'erroenvioimagem':
             $retorno = "<p class='fonte'>Houve um erro no upload da imagem!</p>";
+            break;
+        case 'cadastrofracasso':
+            $retorno = "<p class='fonte'>Houve um erro no cadastro!</p>";
             break;
         default: 
             $retorno = "";

@@ -52,6 +52,15 @@
                         <div>
                             <button type="submit" name="cadastrarUsuario" class="btn btn-outline-success">Enviar:</button>
                         </div>
+                        <div class="mt-2">
+                        <?php
+                            if(isset($_GET['mensagemUsuario'])){
+                                include_once 'msg.php';
+                                $_GET['mensagemUsuario'];
+                                echo mostraMensagem($_GET['mensagemUsuario']);
+                            }
+                        ?>
+                        </div>
                     </div>
         </form>
     </div>
@@ -87,10 +96,10 @@
                         </div>
                         <div class="mt-2">
                             <?php
-                            if(isset($_GET['mensagem'])){
-                                include_once 'errorMessage.php';
-                                $_GET['mensagem'];
-                                echo mostraErro($_GET['mensagem']);
+                            if(isset($_GET['mensagemProduto'])){
+                                include_once 'msg.php';
+                                $_GET['mensagemProduto'];
+                                echo mostraMensagem($_GET['mensagemProduto']);
                             }
                             ?>
                         </div>

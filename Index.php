@@ -1,6 +1,7 @@
 <?php 
 session_start();
 include_once "database/wearing.php";
+include_once "database/skateboard.php";
 ?>
 <!DOCTYPE html>
 <html lang="pr-br">
@@ -124,33 +125,31 @@ include_once "database/wearing.php";
   </ul>
   </div>
 </div>
-    <?php 
-    shuffle($imagem);
-    ?>
+
 <div class="container">
   <div class="row">
     <div class="col">
       <a href="details.php">
-        <img class="img-fluid " src="<?php echo "./imagens/".$imagem[0]?>">
+        <img class="img-fluid " src="<?php echo "./imagens/".$imagemTruck[0]?>">
       </a>
       <a href="details.php">
-        <img class="img-fluid " src="<?php echo "./imagens/".$imagem[1]?>">
-      </a>
-    </div>
-    <div class="col">
-      <a href="details.php">
-        <img class="img-fluid" src="<?php echo "./imagens/".$imagem[2]?>">
-      </a>
-      <a href="details.php">
-        <img class="img-fluid" src="<?php echo "./imagens/".$imagem[3]?>">
+        <img class="img-fluid " src="<?php echo "./imagens/".$imagemLixa[2]?>">
       </a>
     </div>
     <div class="col">
       <a href="details.php">
-       <img class="img-fluid" src="<?php echo "./imagens/".$imagem[4]?>">
+        <img class="img-fluid" src="<?php echo "./imagens/".$imagemRolamento[2]?>">
       </a>
       <a href="details.php">
-       <img class="img-fluid" src="<?php echo "./imagens/".$imagem[5]?>">
+        <img class="img-fluid" src="<?php echo "./imagens/".$imagemShape[2]?>">
+      </a>
+    </div>
+    <div class="col">
+      <a href="details.php">
+       <img class="img-fluid" src="<?php echo "./imagens/".$imagemShape[4]?>">
+      </a>
+      <a href="details.php">
+       <img class="img-fluid" src="<?php echo "./imagens/".$imagem[0]?>">
       </a>
     </div>
   </div>

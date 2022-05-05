@@ -1,7 +1,11 @@
 <?php 
 session_start();
 include_once "database/wearing.php";
+include_once "database/skateboard.php";
+$numeroItem = 1;
+$urlDetails = $_SERVER['REQUEST_URI'];
 ?>
+
 <!DOCTYPE html>
 <html lang="pr-br">
 <head>
@@ -89,10 +93,29 @@ include_once "database/wearing.php";
         }else{
           echo "<a href='login.php' class='btn btn-outline-success my-2'>Login</a>";
         }
+
+
         ?>
       </div>
   </div>
-
 </nav>
-
+<div class="d-flex justify-content-center fonte">
+    <img class="img-fluid " src="<?php echo "./imagens/".$imagemDetail[0]?>" width="500" height="500">
+    <ul class="list-group list-group-flush ">
+       <li class="list-group-item">
+           <h1><?php echo $nomeDetail[0]?></h2><br>
+        </li>
+        <li class="list-group-item">
+           <h2>Marca: <?php echo $marcaDetail[0]?></h1>
+        </li>
+        <li class="list-group-item">
+           <h3><?php echo $precoDetail[0]?>R$</h3>
+        </li>
+        <li>
+          <h4>Selecione a quantidade: </h2>
+              <input type="number" class="form-control mr-sm-2" min="1" value="1"> 
+        </li>
+    </ul>
+</div>
 </body>
+</html>

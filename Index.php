@@ -146,10 +146,10 @@ include_once "database/skateboard.php";
     </div>
     <div class="col">
       <a href="details.php?details=<?php echo $idShape[4]?>">
-       <img class="img-fluid" src="<?php echo "./imagens/".$imagemShape[4]?>">
+       <img class="img-fluid" src="<?php echo "./imagens/".$imagemShape[5]?>">
       </a>
-      <a href="details.php?details=<?php echo $id[0]?>">
-       <img class="img-fluid" src="<?php echo "./imagens/".$imagem[0]?>">
+      <a href="details.php?details=<?php echo $idRoupa[0]?>">
+       <img class="img-fluid" src="<?php echo "./imagens/".$imagemRoupa[0]?>">
       </a>
     </div>
   </div>

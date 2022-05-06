@@ -5,15 +5,21 @@ $conn = conectar();
 
 if(isset($_GET['details'])){
 $detailsId = $_GET['details'];
+$showSkateDetail = "";
 
-$sqlDetails = "SELECT * FROM skateboard_tb WHERE id='$detailsId'";
-if($result = mysqli_query($conn, $sqlDetails)){
+$sqlSkateDetails = "SELECT * FROM skateboard_tb WHERE id='$detailsId'";
+if($result = mysqli_query($conn, $sqlSkateDetails)){
     while($linha = mysqli_fetch_array($result)){
-        $tipoDetail[] = $linha['tipo'];
-        $marcaDetail[] = $linha['marca'];
-        $imagemDetail[] = $linha['imagem'];
-        $nomeDetail[] = $linha['nome'];
-        $precoDetail[] = $linha['preco'];
+        $tipoSkateDetail[] = $linha['tipo'];
+        $marcaSkateDetail[] = $linha['marca'];
+        $imagemSkateDetail[] = $linha['imagem'];
+        $nomeSkateDetail[] = $linha['nome'];
+        $precoSkateDetail[] = $linha['preco'];
+        $secaoSkateDetail[] = $linha['secaoSkate'];
+        $promocaoSkateDetail[] = $linha['promocao'];
+        if($secaoSkateDetail[0] == "skate"){
+            $showSkateDetail = "mostrarskate";
+        }
 
         }
     }

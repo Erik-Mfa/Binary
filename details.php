@@ -99,23 +99,66 @@ $urlDetails = $_SERVER['REQUEST_URI'];
       </div>
   </div>
 </nav>
-<div class="d-flex justify-content-center fonte">
-    <img class="img-fluid " src="<?php echo "./imagens/".$imagemDetail[0]?>" width="500" height="500">
-    <ul class="list-group list-group-flush ">
-       <li class="list-group-item">
-           <h1><?php echo $nomeDetail[0]?></h2><br>
-        </li>
-        <li class="list-group-item">
-           <h2>Marca: <?php echo $marcaDetail[0]?></h1>
-        </li>
-        <li class="list-group-item">
-           <h3><?php echo $precoDetail[0]?>R$</h3>
-        </li>
-        <li>
-          <h4>Selecione a quantidade: </h2>
-              <input type="number" class="form-control mr-sm-2" min="1" value="1"> 
-        </li>
-    </ul>
-</div>
+
+<?php 
+if($showSkateDetail == "mostrarskate"){
+  echo "<div class='d-flex justify-content-center fonte'>
+  <img class='img-fluid ' src='./imagens/$imagemSkateDetail[0]' width='500' height='500'>
+  <ul class='list-group list-group-flush '>
+     <li class='list-group-item'>
+         <h1>$nomeSkateDetail[0]</h2><br>
+      </li>
+      <li class='list-group-item'>
+         <h2>Marca: $marcaSkateDetail[0]</h1>
+      </li>";
+      if($promocaoSkateDetail[0] != 1){
+        $precoSkateDetailPromocao[0] = $precoSkateDetail[0] - ($precoSkateDetail[0] * $promocaoSkateDetail[0] / 100); 
+        echo "<li class='list-group-item'>
+                <h3>Preço: $precoSkateDetailPromocao[0]R$ <span class='badge badge-danger'>Promoção</span></h1>
+             </li>"; 
+      } else {
+        echo "<li class='list-group-item'>
+                <h3>$precoSkateDetail[0]R$ </h3>
+              </li>";
+      }
+      echo "<li class='list-group-item'>
+          <input class='btn btn-outline-success my-2' type='submit' value='Adicionar ao carrinho'>
+      </li>
+  </ul>
+</div>";
+}
+?>
+
+<?php 
+if($showRoupaDetails == "mostrarroupa"){
+  echo "<div class='d-flex justify-content-center fonte'>
+  <img class='img-fluid ' src='./imagens/$imagemRoupaDetails[0]' width='500' height='500'>
+  <ul class='list-group list-group-flush '>
+     <li class='list-group-item'>
+         <h1>$nomeRoupaDetails[0]</h2><br>
+      </li>
+      <li class='list-group-item'>
+         <h2>Marca: $marcaRoupaDetails[0]</h1>
+      </li>";
+      if($promocaoRoupaDetails[0] != 1){
+        $precoRoupaDetailsPromocao[0] = $precoRoupaDetails[0] - ($precoRoupaDetails[0] * $promocaoRoupaDetails[0] / 100); 
+        echo "<li class='list-group-item'>
+                <h3>Preço: $precoRoupaDetailsPromocao[0]R$ <span class='badge badge-danger'>Promoção</span></h1>
+             </li>"; 
+      } else {
+        echo "<li class='list-group-item'>
+                <h3>$precoRoupaDetails[0]R$ </h3>
+              </li>";
+      }
+      echo "<li class='list-group-item'>
+          <input class='btn btn-outline-success my-2' type='submit' value='Adicionar ao carrinho'>
+      </li>
+  </ul>
+</div>";
+}
+?>
+
+
+
 </body>
 </html>

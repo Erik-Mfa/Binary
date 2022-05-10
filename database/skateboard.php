@@ -3,6 +3,22 @@ include_once 'conn.php';
 
 $conn = conectar();
 
+$sqlSkate = "SELECT * FROM skateboard_tb";
+if($result = mysqli_query($conn, $sqlSkate)){
+    while($linha = mysqli_fetch_array($result)){
+        $idSkate[] = $linha['id'];
+        $tipoSkate[] = $linha['tipo'];
+        $marcaSkate[] = $linha['marca'];
+        $imagemSkate[] = $linha['imagem'];
+        $nomeSkate[] = $linha['nome'];
+        $precoSkate[] = $linha['preco'];
+        $secaoSkate[] = $linha['secaoSkate'];
+        $promocaoSkate[] = $linha['promocao'];
+        }
+    }
+
+
+
 if(isset($_GET['details'])){
 $detailsId = $_GET['details'];
 $showSkateDetail = "";

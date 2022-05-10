@@ -126,30 +126,34 @@ include_once "database/skateboard.php";
   </div>
 </div>
 
+<?php 
+print_r($idSkate);
+?>
+
 <div class="container">
   <div class="row">
     <div class="col">
-      <a href="/details.php?details=<?php echo $idTruck[0]?>">
-        <img class="img-fluid " src="<?php echo "./imagens/".$imagemTruck[0]?>">
+      <a href="/details.php?details=<?php echo $idSkate[0]?>">
+        <img class="img-fluid " src="<?php echo "./imagens/".$imagemSkate[0]?>">
       </a>
-      <a href="details.php?details=<?php echo $idLixa[2]?>">
-        <img class="img-fluid " src="<?php echo "./imagens/".$imagemLixa[2]?>">
-      </a>
-    </div>
-    <div class="col">
-      <a href="details.php?details=<?php echo $idRolamento[2]?>">
-        <img class="img-fluid" src="<?php echo "./imagens/".$imagemRolamento[2]?>">
-      </a>
-      <a href="details.php?details=<?php echo $idShape[2]?>">
-        <img class="img-fluid" src="<?php echo "./imagens/".$imagemShape[2]?>">
+      <a href="details.php?details=<?php echo $idSkate[2]?>">
+        <img class="img-fluid " src="<?php echo "./imagens/".$imagemSkate[2]?>">
       </a>
     </div>
     <div class="col">
-      <a href="details.php?details=<?php echo $idShape[4]?>">
-       <img class="img-fluid" src="<?php echo "./imagens/".$imagemShape[5]?>">
+      <a href="details.php?details=<?php echo $idSkate[3]?>">
+        <img class="img-fluid" src="<?php echo "./imagens/".$imagemSkate[3]?>">
       </a>
-      <a href="details.php?details=<?php echo $idRoupa[0]?>">
-       <img class="img-fluid" src="<?php echo "./imagens/".$imagemRoupa[0]?>">
+      <a href="details.php?details=<?php echo $idSkate[4]?>">
+        <img class="img-fluid" src="<?php echo "./imagens/".$imagemSkate[4]?>">
+      </a>
+    </div>
+    <div class="col">
+      <a href="details.php?details=<?php echo $idSkate[7]?>">
+       <img class="img-fluid" src="<?php echo "./imagens/".$imagemSkate[7]?>">
+      </a>
+      <a href="details.php?details=<?php echo $idSkate[11]?>">
+       <img class="img-fluid" src="<?php echo "./imagens/".$imagemSkate[11]?>">
       </a>
     </div>
   </div>

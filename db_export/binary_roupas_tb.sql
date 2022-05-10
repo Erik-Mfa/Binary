@@ -30,8 +30,10 @@ CREATE TABLE `roupas_tb` (
   `tamanho` varchar(45) NOT NULL,
   `imagem` varchar(45) DEFAULT NULL,
   `nome` varchar(45) NOT NULL,
+  `promocao` varchar(45) NOT NULL,
+  `secaoRoupas` varchar(45) NOT NULL DEFAULT 'roupa',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +42,7 @@ CREATE TABLE `roupas_tb` (
 
 LOCK TABLES `roupas_tb` WRITE;
 /*!40000 ALTER TABLE `roupas_tb` DISABLE KEYS */;
-INSERT INTO `roupas_tb` VALUES (1,'camiseta','lakai',100,'xx','camiseta_Lakai.jpg','Camiseta Lakai'),(6,'camiseta','Ripndip',180,'m','camiseta_Ripndip.jpg','Camiseta Ripndip'),(54,'camiseta','spitfire',100,'p','camiseta_Spitfire.jpg','Camiseta Spitfire');
+INSERT INTO `roupas_tb` VALUES (1,'camiseta','lakai',100,'xx','camiseta_Lakai.jpg','Camiseta Lakai','30','roupa'),(6,'camiseta','Ripndip',180,'m','camiseta_Ripndip.jpg','Camiseta Ripndip','1','roupa'),(54,'camiseta','spitfire',100,'p','camiseta_Spitfire.jpg','Camiseta Spitfire','1','roupa'),(69,'camiseta','Creature',100,'m ','camiseta_Creature.jpg','Camiseta Creature','1','roupa');
 /*!40000 ALTER TABLE `roupas_tb` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-03 15:03:35
+-- Dump completed on 2022-05-10 14:44:33

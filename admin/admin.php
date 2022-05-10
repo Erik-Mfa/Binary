@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Binary - Admin</title>
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,8 +16,8 @@
 <body>
 <!--NAV-->
 <nav class="navbar navbar-expand-lg navbar-light bg-white ">
-    <a class="navbar-brand mx-auto" href="index.php">
-        <img src="imagens/logo_Opcional.png" width="280" height="100" alt="">
+    <a class="navbar-brand mx-auto" href="../index.php">
+        <img src="../imagens/logo_Opcional.png" width="280" height="100" alt="">
     </a>
 </nav>
 <div class="text-center fonte">
@@ -26,7 +26,7 @@
 </div>
 <div>
     <div class="border">
-        <form action="database/newUser.php"  method="post">
+        <form action="newUser.php"  method="post">
                 <h1 class="cor ml-1">Cadastro de usuário: </h1>
                     <div class="ml-2">
                         <div>  
@@ -55,7 +55,7 @@
                         <div class="mt-2">
                         <?php
                             if(isset($_GET['mensagemUsuario'])){
-                                include_once 'msg.php';
+                                include_once '../msg.php';
                                 $_GET['mensagemUsuario'];
                                 echo mostraMensagem($_GET['mensagemUsuario']);
                             }
@@ -65,31 +65,35 @@
         </form>
     </div>
     <div class="my-5 border">
-        <form action="database/newProduct.php"  method="post" enctype="multipart/form-data">
+        <form action="newWearing.php"  method="post" enctype="multipart/form-data">
                     <h1 class="cor ml-1">Cadastro de produto: </h1>
                     <div class="ml-2">
                         <div>  
                             <label for="newTipo" text-right">Tipo do produto:</label>
-                            <input class="border border-success" type="text" name="newTipo" maxlength="15">
+                            <input class="border border-success" type="text" name="newTipoWearing" maxlength="15">
                         </div>
                         <div>   
                             <label for="newMarca" text-right">Marca:</label> 
-                            <input class="border border-success" type="text" name="newMarca" maxlength="20">
+                            <input class="border border-success" type="text" name="newMarcaWearing" maxlength="20">
                         </div>
                         <div>  
                             <label for="newPreco" text-right">Preço:</label>
-                            <input class="border border-success" type="number" name="newPreco">
+                            <input class="border border-success" type="number" name="newPrecoWearing">
                         </div>
                         <div>  
                             <label for="newTamanho" text-right">Tamanho:</label>
-                            <input class="border border-success" type="text" name="newTamanho" maxlength="5">
+                            <input class="border border-success" type="text" name="newTamanhoWearing" maxlength="5">
                         </div>
                         <div>  
                             <label for="newNome" text-right">Nome:</label>
-                            <input class="border border-success" type="text" name="newNome" maxlength="50">
+                            <input class="border border-success" type="text" name="newNomeWearing" maxlength="50">
+                        </div>
+                        <div>  
+                            <label for="newPromocao" text-right">Desconto:</label>
+                            <input class="border border-success" type="text" name="newPromocaoWearing" maxlength="50">
                         </div>
                         <div class="mb-3 col-3">  
-                            <input class="border form-control form-control-sm" type="file" name="newImagem">
+                            <input class="border form-control form-control-sm" type="file" name="newImagemWearing">
                         </div>
                         <div>
                             <button type="submit" name="cadastrarProduto" class="btn btn-outline-success">Enviar:</button>
@@ -97,7 +101,7 @@
                         <div class="mt-2">
                             <?php
                             if(isset($_GET['mensagemProduto'])){
-                                include_once 'msg.php';
+                                include_once '../msg.php';
                                 $_GET['mensagemProduto'];
                                 echo mostraMensagem($_GET['mensagemProduto']);
                             }
@@ -107,6 +111,51 @@
                     </div>
              </form>
     </div>
+
+    <div class="my-5 border">
+        <form action="newSkate.php"  method="post" enctype="multipart/form-data">
+                    <h1 class="cor ml-1">Cadastro de skate: </h1>
+                    <div class="ml-2">
+                        <div>  
+                            <label for="newTipoSkate" text-right">Tipo do produto:</label>
+                            <input class="border border-success" type="text" name="newTipoSkate" maxlength="15">
+                        </div>
+                        <div>   
+                            <label for="newMarcaSkate" text-right">Marca:</label> 
+                            <input class="border border-success" type="text" name="newMarcaSkate" maxlength="20">
+                        </div>
+                        <div>  
+                            <label for="newNomeSkate" text-right">Nome:</label>
+                            <input class="border border-success" type="text" name="newNomeSkate" maxlength="50">
+                        </div>
+                        <div>  
+                            <label for="newPrecoSkate" text-right">Preço:</label>
+                            <input class="border border-success" type="number" name="newPrecoSkate">
+                        </div>
+                        <div>  
+                            <label for="newPromocaoSkate" text-right">Desconto:</label>
+                            <input class="border border-success" type="text" name="newPromocaoSkate" maxlength="50">
+                        </div>
+                        <div class="mb-3 col-3">  
+                            <input class="border form-control form-control-sm" type="file" name="newImagemSkate">
+                        </div>
+                        <div>
+                            <button type="submit" name="cadastrarSkate" class="btn btn-outline-success">Enviar:</button>
+                        </div>
+                        <div class="mt-2">
+                            <?php
+                            if(isset($_GET['mensagemSkate'])){
+                                include_once '../msg.php';
+                                $_GET['mensagemSkate'];
+                                echo mostraMensagem($_GET['mensagemSkate']);
+                            }
+                            ?>
+                        </div>
+
+                    </div>
+             </form>
+    </div>
+
 </div>
 </body>
 </html>

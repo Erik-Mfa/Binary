@@ -29,8 +29,10 @@ CREATE TABLE `skateboard_tb` (
   `imagem` varchar(45) NOT NULL,
   `nome` varchar(45) NOT NULL,
   `preco` int NOT NULL,
+  `promocao` int unsigned NOT NULL,
+  `secaoSkate` varchar(45) NOT NULL DEFAULT 'skate',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +41,7 @@ CREATE TABLE `skateboard_tb` (
 
 LOCK TABLES `skateboard_tb` WRITE;
 /*!40000 ALTER TABLE `skateboard_tb` DISABLE KEYS */;
-INSERT INTO `skateboard_tb` VALUES (11,'shape','Blind','shape_Blind.jpg','Shape Blind',300),(12,'shape','Blind','shape_Blind2.jpg','Shape Blind',300),(14,'truck','Crail','truck_Crail.jpg','Truck Crail',350),(15,'truck','Independent','truck_Independent.jpg','Truck Independent',650),(16,'truck','Independent','truck_Independent2.jpg','Truck Independent',500),(17,'truck','Independent','truck_Independent3.jpg','Truck Independent',700),(18,'truck','Stronger','truck_Stronger.jpg','Truck Stronger',300),(19,'truck','Trurium','truck_Trurium.jpg','Truck Trurium',250),(20,'shape','Baker','shape_Baker.jpg','Shape Baker',300),(22,'shape','Element','shape_Element.jpg','Shape Element',320),(23,'shape','Santa Cruz','shape_SantaCruz_Oldschool.jpg','Shape Santa Cruz',400),(24,'shape','Dropdead','shape_Dropdead_MuriloPeres.jpg','Shape Dropdead',300),(55,'rolamento','Spitfire','rolamento_Spitfire_Cheapshots.jpg','Rolamento Spitfire',90),(56,'rolamento','Toy Machine','rolamento_Toymachine.jpg','Rolamento ToyMachine',250),(57,'rolamento','Bones','rolamento_BonesSwiss.jpg','Rolamento Bones Swiss',200),(58,'rolamento','Grizzly','rolamento_Grizzly.jpg','Rolamento Grizzly',200),(59,'rolamento','Bones','rolamento_Superbones.jpg','Rolamento SuperBones',150),(60,'rolamento','Bones','rolamento_Redbones.jpg','Rolamento Redbones',120),(61,'lixa','Grizzly','lixa_Grizzly.jpg','Lixa Grizzly ',40),(63,'lixa','Shake Junt','lixa_ShakeJunt.jpg','Lixa Shake Junt ',70),(66,'lixa','Black Sheep','lixa_BlackSheep.jpg','Lixa Black Sheep',30),(69,'lixa','Black Sheep','lixa_BlackSheep2.jpg','Lixa Black Sheep TieDie',50),(72,'lixa','Santa Cruz','lixa_SantaCruz.jpg','Lixa Santa Cruz',30);
+INSERT INTO `skateboard_tb` VALUES (11,'shape','Blind','shape_Blind.jpg','Shape Blind',300,1,'skate'),(12,'shape','Blind','shape_Blind2.jpg','Shape Blind',300,1,'skate'),(14,'truck','Crail','truck_Crail.jpg','Truck Crail',350,30,'skate'),(15,'truck','Independent','truck_Independent.jpg','Truck Independent',650,1,'skate'),(16,'truck','Independent','truck_Independent2.jpg','Truck Independent',500,1,'skate'),(17,'truck','Independent','truck_Independent3.jpg','Truck Independent',700,1,'skate'),(18,'truck','Stronger','truck_Stronger.jpg','Truck Stronger',300,1,'skate'),(19,'truck','Trurium','truck_Trurium.jpg','Truck Trurium',250,1,'skate'),(20,'shape','Baker','shape_Baker.jpg','Shape Baker',300,1,'skate'),(22,'shape','Element','shape_Element.jpg','Shape Element',320,1,'skate'),(23,'shape','Santa Cruz','shape_SantaCruz_Oldschool.jpg','Shape Santa Cruz',400,1,'skate'),(24,'shape','Dropdead','shape_Dropdead_MuriloPeres.jpg','Shape Dropdead',300,1,'skate'),(55,'rolamento','Spitfire','rolamento_Spitfire_Cheapshots.jpg','Rolamento Spitfire',90,1,'skate'),(56,'rolamento','Toy Machine','rolamento_Toymachine.jpg','Rolamento ToyMachine',250,1,'skate'),(57,'rolamento','Bones','rolamento_BonesSwiss.jpg','Rolamento Bones Swiss',200,1,'skate'),(58,'rolamento','Grizzly','rolamento_Grizzly.jpg','Rolamento Grizzly',200,1,'skate'),(59,'rolamento','Bones','rolamento_Superbones.jpg','Rolamento SuperBones',150,1,'skate'),(60,'rolamento','Bones','rolamento_Redbones.jpg','Rolamento Redbones',120,1,'skate'),(61,'lixa','Grizzly','lixa_Grizzly.jpg','Lixa Grizzly ',40,1,'skate'),(63,'lixa','Shake Junt','lixa_ShakeJunt.jpg','Lixa Shake Junt ',70,1,'skate'),(66,'lixa','Black Sheep','lixa_BlackSheep.jpg','Lixa Black Sheep',30,1,'skate'),(68,'lixa','Black Sheep','lixa_BlackSheep2.jpg','Lixa Black Sheep TieDie',50,1,'skate'),(72,'lixa','Santa Cruz','lixa_SantaCruz.jpg','Lixa Santa Cruz',30,1,'skate'),(73,'roda','Bones','roda_BonesPreta.jpg','Roda Bones Preta',300,1,'skate'),(74,'roda','Element','roda_Element.jpg','Roda Element',350,30,'skate'),(75,'roda','Spitfire','roda_SpitfireFormulaFour.jpg','Roda Spitfire Formula Four',400,20,'skate');
 /*!40000 ALTER TABLE `skateboard_tb` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-03 15:03:35
+-- Dump completed on 2022-05-10 14:44:33

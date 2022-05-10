@@ -84,7 +84,7 @@ include_once "database/skateboard.php";
           if(isset($_SESSION['userName'])){
             
             if($adm == 2){
-              echo "<a href='admin.php' class='btn btn-outline-success my-2'>Admin</button>";
+              echo "<a href='./admin/admin.php' class='btn btn-outline-success my-2'>Admin</button>";
             }
             echo "<a href='./database/logout.php' class='btn btn-outline-success my-2 margin-nav'>Logout</a>"; 
         }else{
@@ -93,7 +93,6 @@ include_once "database/skateboard.php";
         ?>
       </div>
   </div>
-  
 </nav>
 
 <!--FIM NAV------------------------------------------------------------------------------------------>
@@ -125,11 +124,6 @@ include_once "database/skateboard.php";
   </ul>
   </div>
 </div>
-
-<?php 
-print_r($idSkate);
-?>
-
 <div class="container">
   <div class="row">
     <div class="col">

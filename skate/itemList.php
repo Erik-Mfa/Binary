@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include_once "../database/wearing.php";
 include_once "../database/skateboard.php";
 ?>
@@ -17,54 +18,80 @@ include_once "../database/skateboard.php";
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,200&display=swap" rel="stylesheet">
 </head>
 <body>
+    <?php 
+        if(isset($_SESSION['userName'])){
+          $adm = $_SESSION['userLevel'];
+      }
+    ?>
 <main>
 <!--NAV-->
-<nav class="navbar navbar-expand-lg navbar-light bg-white ">
+<nav class="navbar navbar-light bg-white ">
   <a class="navbar-brand" href="../index.php">
     <img src="../imagens/logo_Opcional.png" width="280" height="100" alt="">
   </a> 
-  
-  <ul class="nav-color nav">
-    <li class="nav-item">
-      <div class="dropdown">
-        <a class="btn text-dark drop" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          SKATES
-        </a>      
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="">TRUCKS</a>
-          <a class="dropdown-item" href="">ROLAMENTOS</a>
-          <a class="dropdown-item" href="">RODAS</a>
-          <a class="dropdown-item" href="">LIXAS</a>
-          <a class="dropdown-item" href="">SHAPES</a>
+  <div class="nav-item">
+    <ul class="nav">
+      <li>
+        <div class="dropdown">
+          <a class="btn text-dark drop" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            SKATES
+          </a>      
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="itemList.php?tipo=truck">TRUCKS</a>
+            <a class="dropdown-item" href="itemList.php?tipo=rolamento">ROLAMENTOS</a>
+            <a class="dropdown-item" href="itemList.php?tipo=roda">RODAS</a>
+            <a class="dropdown-item" href="itemList.php?tipo=lixa">LIXAS</a>
+            <a class="dropdown-item" href="itemList.php?tipo=shape">SHAPES</a>
+          </div>
         </div>
-      </div>
-    </li>
-    <li class="nav-item">
-      <div class="dropdown">
-        <a class="btn text-dark drop" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          ROUPAS
-        </a>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">BONÉS</a>
-          <a class="dropdown-item" href="#">CAMISETAS</a>
-          <a class="dropdown-item" href="#">CAMISAS</a>
-          <a class="dropdown-item" href="#">MOLETONS</a>
+      </li>
+      <li>
+        <div class="dropdown ">
+          <a class="btn text-dark drop margin-nav" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            ROUPAS
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="#">BONÉS</a>
+            <a class="dropdown-item" href="#">CAMISETAS</a>
+            <a class="dropdown-item" href="#">CAMISAS</a>
+            <a class="dropdown-item" href="#">MOLETONS</a>
+          </div>
         </div>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-dark" href="#">TÊNIS</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-dark" href="#">ACESSÓRIOS</a>
-    </li>
-  </ul>
+      </li>
+      <li>
+        <a class="nav-link text-dark margin-nav" href="#">TÊNIS</a>
+      </li>
+      <li>
+        <a class="nav-link text-dark margin-nav" href="#">ACESSÓRIOS</a>
+      </li>
+    </ul>
+  </div>
 
   <div>
-    <form id="pesquisa" class="position-right form-inline my-2">
-      <input class="form-control mr-sm-2 col-6" type="search" placeholder="O que você deseja?" aria-label="Pesquisar">
+    <form id="pesquisa" class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Qual o seu desejo? " aria-label="Pesquisar">
       <button class="btn btn-outline-success my-2" type="submit">Buscar</button>
     </form>
+  </div>
+  <div class="float-right">
+    <?php 
+    if(isset($_SESSION['userName'])){
+      echo "<h4 class='fonte'>Olá," . $_SESSION['userName'] ."!</h4>";
+    }
+    ?>
+      <div class="d-flex justify-content-center">
+        <?php
+          if(isset($_SESSION['userName'])){
+            
+            if($adm == 2){
+              echo "<a href='../admin/admin.php' class='btn btn-outline-success my-2'>Admin</button>";
+            }
+            echo "<a href='../database/logout.php' class='btn btn-outline-success my-2 margin-nav'>Logout</a>"; 
+        }else{
+          echo "<a href='../login.php' class='btn btn-outline-success my-2'>Login</a>";
+        }
+        ?>
+      </div>
   </div>
 </nav>
 <!--FIM NAV-->
@@ -72,22 +99,19 @@ include_once "../database/skateboard.php";
 <div class='container'>
   <div class='row'>
 <?php 
-foreach ($imagemItemList as $item => $imagem){
-
-
+foreach ($imagemItemList as $id => $imagem){
 echo "<div class='col'>
-      <a href='/details.php?details=<?php echo $idTruck[0]?>'>
-         <img class='img-fluid' src='../imagens/$imagem'>
-      </a>
-      <a href='details.php?details=<?php echo $idLixa[2]?>'>
-        <img class='img-fluid' src='../imagens/$imagem'>
-      </a>
-    </div>";
-}
+        <a href='/details.php?details=$idItemList[$id]'>
+            <img class='img-fluid' src='../imagens/$imagem'>
+        </a>
+      </div>
+      
+      ";
+      
+  }
 ?>
   </div>
 </div>
-
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

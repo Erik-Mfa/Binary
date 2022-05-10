@@ -1,5 +1,5 @@
 <?php
-include_once 'conn.php';
+include_once '../database/conn.php';
 
   if(isset($_POST['cadastrarUsuario']) || empty($_POST['newNome']) || empty($_POST['newUsuario']) || empty($_POST['newSenha']) || empty($_POST['newNivel']) || empty($_POST['newEmail'])){
     header('location:../admin.php?mensagemUsuario=cadastroembranco');

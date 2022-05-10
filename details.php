@@ -93,7 +93,7 @@ $urlDetails = $_SERVER['REQUEST_URI'];
         }else{
           echo "<a href='login.php' class='btn btn-outline-success my-2'>Login</a>";
         }
-
+        
 
         ?>
       </div>

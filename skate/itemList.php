@@ -1,4 +1,7 @@
-<?php include_once "../database/wearing.php"?>
+<?php 
+include_once "../database/wearing.php";
+include_once "../database/skateboard.php";
+?>
 <!DOCTYPE html>
 <html lang="pr-br">
 <head>
@@ -28,11 +31,11 @@
           SKATES
         </a>      
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="truck.php">TRUCKS</a>
-          <a class="dropdown-item" href="rolamento.php">ROLAMENTOS</a>
-          <a class="dropdown-item" href="roda.php">RODAS</a>
-          <a class="dropdown-item" href="lixa.php">LIXAS</a>
-          <a class="dropdown-item" href="shape.php">SHAPES</a>
+          <a class="dropdown-item" href="">TRUCKS</a>
+          <a class="dropdown-item" href="">ROLAMENTOS</a>
+          <a class="dropdown-item" href="">RODAS</a>
+          <a class="dropdown-item" href="">LIXAS</a>
+          <a class="dropdown-item" href="">SHAPES</a>
         </div>
       </div>
     </li>
@@ -66,32 +69,22 @@
 </nav>
 <!--FIM NAV-->
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <a href="details.php">
-        <img class="img-fluid " src="<?php echo "../imagens/".$imagemRolamento[0]?>">
+<div class='container'>
+  <div class='row'>
+<?php 
+foreach ($imagemItemList as $item => $imagem){
+
+
+echo "<div class='col'>
+      <a href='/details.php?details=<?php echo $idTruck[0]?>'>
+         <img class='img-fluid' src='../imagens/$imagem'>
       </a>
-      <a href="details.php">
-        <img class="img-fluid " src="<?php echo "../imagens/".$imagemRolamento[1]?>">
+      <a href='details.php?details=<?php echo $idLixa[2]?>'>
+        <img class='img-fluid' src='../imagens/$imagem'>
       </a>
-    </div>
-    <div class="col">
-      <a href="details.php">
-        <img class="img-fluid" src="<?php echo "../imagens/".$imagemRolamento[2]?>">
-      </a>
-      <a href="details.php">
-        <img class="img-fluid" src="<?php echo "../imagens/".$imagemRolamento[3]?>">
-      </a>
-    </div>
-    <div class="col">
-      <a href="details.php">
-       <img class="img-fluid" src="<?php echo "../imagens/".$imagemRolamento[4]?>">
-      </a>
-      <a href="details.php">
-       <img class="img-fluid" src="<?php echo "../imagens/".$imagemRolamento[5]?>">
-      </a>
-    </div>
+    </div>";
+}
+?>
   </div>
 </div>
 

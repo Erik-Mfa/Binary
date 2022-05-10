@@ -37,11 +37,11 @@ include_once "database/skateboard.php";
             SKATES
           </a>      
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="">TRUCKS</a>
-            <a class="dropdown-item" href="">ROLAMENTOS</a>
-            <a class="dropdown-item" href="">RODAS</a>
-            <a class="dropdown-item" href="">LIXAS</a>
-            <a class="dropdown-item" href="">SHAPES</a>
+            <a class="dropdown-item" href="./skate/itemList.php?tipo=truck">TRUCKS</a>
+            <a class="dropdown-item" href="./skate/itemList.php?tipo=rolamento">ROLAMENTOS</a>
+            <a class="dropdown-item" href="./skate/itemList.php?tipo=roda">RODAS</a>
+            <a class="dropdown-item" href="./skate/itemList.php?tipo=lixa">LIXAS</a>
+            <a class="dropdown-item" href="./skate/itemList.php?tipo=shape">SHAPES</a>
           </div>
         </div>
       </li>

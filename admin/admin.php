@@ -151,11 +151,11 @@
                             }
                             ?>
                         </div>
-
                     </div>
              </form>
+             <a class="btn btn-outline-success mt-2" href="edit.php">Editar</a>
     </div>
-
+    
 </div>
 </body>
 </html>

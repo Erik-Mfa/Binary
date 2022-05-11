@@ -135,16 +135,16 @@ include_once "database/skateboard.php";
       </a>
     </div>
     <div class="col">
-      <a href="details.php?details=<?php echo $idSkate[3]?>">
-        <img class="img-fluid" src="<?php echo "./imagens/".$imagemSkate[3]?>">
+      <a href="details.php?details=<?php echo $idSkate[5]?>">
+        <img class="img-fluid" src="<?php echo "./imagens/".$imagemSkate[5]?>">
       </a>
-      <a href="details.php?details=<?php echo $idSkate[4]?>">
-        <img class="img-fluid" src="<?php echo "./imagens/".$imagemSkate[4]?>">
+      <a href="details.php?details=<?php echo $idSkate[15]?>">
+        <img class="img-fluid" src="<?php echo "./imagens/".$imagemSkate[15]?>">
       </a>
     </div>
     <div class="col">
-      <a href="details.php?details=<?php echo $idSkate[7]?>">
-       <img class="img-fluid" src="<?php echo "./imagens/".$imagemSkate[7]?>">
+      <a href="details.php?details=<?php echo $idSkate[10]?>">
+       <img class="img-fluid" src="<?php echo "./imagens/".$imagemSkate[10]?>">
       </a>
       <a href="details.php?details=<?php echo $idSkate[11]?>">
        <img class="img-fluid" src="<?php echo "./imagens/".$imagemSkate[11]?>">

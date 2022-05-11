@@ -139,7 +139,7 @@ echo "<div class='col'>
     </div>
     <div class="col-4 mt-4">
       <h4>Aceitamos:</h4>
-      <img class="" src="imagens/cartao_Bandeiras.png" width="30%">
+      <img class="" src="../imagens/cartao_Bandeiras.png" width="30%">
     </div>
   </div>
 </div>

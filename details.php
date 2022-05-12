@@ -40,11 +40,11 @@ $urlDetails = $_SERVER['REQUEST_URI'];
             SKATES
           </a>      
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="/skate/truck.php">TRUCKS</a>
-            <a class="dropdown-item" href="/skate/rolamento.php">ROLAMENTOS</a>
-            <a class="dropdown-item" href="/skate/roda.php">RODAS</a>
-            <a class="dropdown-item" href="/skate/lixa.php">LIXAS</a>
-            <a class="dropdown-item" href="/skate/shape.php">SHAPES</a>
+            <a class="dropdown-item" href="./skate/itemList.php?tipo=truck">TRUCKS</a>
+            <a class="dropdown-item" href="./skate/itemList.php?tipo=rolamento">ROLAMENTOS</a>
+            <a class="dropdown-item" href="./skate/itemList.php?tipo=roda">RODAS</a>
+            <a class="dropdown-item" href="./skate/itemList.php?tipo=lixa">LIXAS</a>
+            <a class="dropdown-item" href="./skate/itemList.php?tipo=shape">SHAPES</a>
           </div>
         </div>
       </li>
@@ -87,7 +87,7 @@ $urlDetails = $_SERVER['REQUEST_URI'];
           if(isset($_SESSION['userName'])){
             
             if($adm == 2){
-              echo "<a href='admin.php' class='btn btn-outline-success my-2'>Admin</button>";
+              echo "<a href='./admin/admin.php' class='btn btn-outline-success my-2'>Admin</button>";
             }
             echo "<a href='./database/logout.php' class='btn btn-outline-success my-2 margin-nav'>Logout</a>"; 
         }else{

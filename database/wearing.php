@@ -9,7 +9,7 @@ $showRoupaDetails = "";
 
 $sqlRoupasDetails = "SELECT * FROM roupas_tb WHERE id='$detailsId'";
 if($result = mysqli_query($conn, $sqlRoupasDetails)){
-    while($linha = mysqli_fetch_array($result)){
+    while($linha = mysqli_fetch_assoc($result)){
         $idRoupaDetails[] = $linha['id'];
         $tipoRoupaDetails[] = $linha['tipo'];
         $nomeRoupaDetails[] = $linha['nome'];
@@ -28,7 +28,7 @@ if($result = mysqli_query($conn, $sqlRoupasDetails)){
 
 $sqlRoupas = "SELECT * FROM roupas_tb";
 if($result = mysqli_query($conn, $sqlRoupas)){
-    while($linha = mysqli_fetch_array($result)){
+    while($linha = mysqli_fetch_assoc($result)){
         $idRoupa[] = $linha['id'];
         $tipoRoupa[] = $linha['tipo'];
         $marcaRoupa[] = $linha['marca']; 

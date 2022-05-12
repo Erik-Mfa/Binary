@@ -5,7 +5,7 @@ $conn = conectar();
 
 $sqlSkate = "SELECT * FROM skateboard_tb";
 if($result = mysqli_query($conn, $sqlSkate)){
-    while($linha = mysqli_fetch_array($result)){
+    while($linha = mysqli_fetch_assoc($result)){
         $idSkate[] = $linha['id'];
         $tipoSkate[] = $linha['tipo'];
         $marcaSkate[] = $linha['marca'];
@@ -26,7 +26,7 @@ $showSkateDetail = "";
 
 $sqlSkateDetails = "SELECT * FROM skateboard_tb WHERE id='$detailsId'";
 if($result = mysqli_query($conn, $sqlSkateDetails)){
-    while($linha = mysqli_fetch_array($result)){
+    while($linha = mysqli_fetch_assoc($result)){
         $tipoSkateDetail[] = $linha['tipo'];
         $marcaSkateDetail[] = $linha['marca'];
         $imagemSkateDetail[] = $linha['imagem'];
@@ -51,7 +51,7 @@ $listItems = $_GET['tipo'];
         case'truck':
             $sqlTrucks = "SELECT * FROM skateboard_tb WHERE tipo='$listItems'";
             if($result = mysqli_query($conn, $sqlTrucks)){
-                while($linha = mysqli_fetch_array($result)){
+                while($linha = mysqli_fetch_assoc($result)){
                     $imagemItemList[] = $linha['imagem'];
                     $idItemList[] = $linha['id'];
                     
@@ -62,7 +62,7 @@ $listItems = $_GET['tipo'];
         case'rolamento':
             $sqlRolamentos = "SELECT * FROM skateboard_tb WHERE tipo='$listItems'";
             if($result = mysqli_query($conn, $sqlRolamentos)){
-                while($linha = mysqli_fetch_array($result)){
+                while($linha = mysqli_fetch_assoc($result)){
                     $imagemItemList[] = $linha['imagem'];
                     $idItemList[] = $linha['id'];
                 }
@@ -72,7 +72,7 @@ $listItems = $_GET['tipo'];
         case'roda':
             $sqlRodas = "SELECT * FROM skateboard_tb WHERE tipo='$listItems'";
             if($result = mysqli_query($conn, $sqlRodas)){
-                while($linha = mysqli_fetch_array($result)){
+                while($linha = mysqli_fetch_assoc($result)){
                     $imagemItemList[] = $linha['imagem'];
                     $idItemList[] = $linha['id'];
                 }
@@ -82,7 +82,7 @@ $listItems = $_GET['tipo'];
         case'lixa':
             $sqlLixas = "SELECT * FROM skateboard_tb WHERE tipo='$listItems'";
             if($result = mysqli_query($conn, $sqlLixas)){
-                while($linha = mysqli_fetch_array($result)){
+                while($linha = mysqli_fetch_assoc($result)){
                     $imagemItemList[] = $linha['imagem'];
                     $idItemList[] = $linha['id'];
                 }
@@ -92,7 +92,7 @@ $listItems = $_GET['tipo'];
         case'shape':
             $sqlShapes = "SELECT * FROM skateboard_tb WHERE tipo='$listItems'";
             if($result = mysqli_query($conn, $sqlShapes)){
-                while($linha = mysqli_fetch_array($result)){
+                while($linha = mysqli_fetch_assoc($result)){
                     $imagemItemList[] = $linha['imagem'];
                     $idItemList[] = $linha['id'];
                 }   

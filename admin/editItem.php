@@ -1,6 +1,7 @@
 <?php 
 session_start();
 include_once '../database/skateboard.php';
+include_once 'editSql.php';
 ?>
 <!DOCTYPE html>
 <html lang="pr-br">
@@ -23,42 +24,40 @@ include_once '../database/skateboard.php';
         <img src="../imagens/logo_Opcional.png" width="280" height="100" alt="">
     </a>
 </nav>
-<?php 
-if(isset($_GET['edit'])){
-    $editId = $_GET['edit'];
-    $sqlSkateEdit = "SELECT * FROM skateboard_tb WHERE id='$editId'";
-    if($result = mysqli_query($conn, $sqlSkateEdit)){
-        while($linha = mysqli_fetch_array($result)){
-            $tipoSkateEdit[] = $linha['tipo'];
-            $marcaSkateEdit[] = $linha['marca'];
-            $nomeSkateEdit[] = $linha['nome'];
-            $precoSkateEdit[] = $linha['preco'];
-            $promocaoSkateEdit[] = $linha['promocao']; 
-            $imagemSkateEdit[] = $linha['imagem'];
-            }
-        }
-    }
-?>
 
 <div class='d-flex justify-content-center fonte'>
     <ul class='list-group list-group-flush '>
-        <li class='list-group-item'>
-            <img class='img-fluid' src='../imagens/<?php   echo $imagemSkateEdit[0]; ?>' width='500' height='500'>
-        </li>
-        <li class='list-group-item'>
-             <h2><?php echo $nomeSkateEdit[0] ?></h2><br>
-        </li>
-        <li class='list-group-item'>
-             <h2><?php echo $tipoSkateEdit[0] ?></h2><br>
-        </li>
-        <li class='list-group-item'>
-            <h2><?php echo $marcaSkateEdit[0] ?></h2>
-        </li>
-        <li class='list-group-item'>
-            <h2><?php echo $precoSkateEdit[0] ?></h2><br>
-        </li>
+        <form action="editSql.php" method="post">
+            <li class='list-group-item'>
+                <img class='img-fluid' src='../imagens/<?php   echo $imagemSkateEdit[0]; ?>' width='500' height='500'>
+            </li>
+            <li class='list-group-item'>
+                <input value="<?php echo $nomeSkateEdit[0] ?>" type="text" name="itemEditNome"><br>
+            </li>
+            <li class='list-group-item'>
+                <input value="<?php echo $tipoSkateEdit[0] ?>" name="itemEditTipo"><br>
+            </li>
+            <li class='list-group-item'>
+                <input value="<?php echo $marcaSkateEdit[0] ?>" name="itemEditMarca"> <br>
+            </li>
+            <li class='list-group-item'>
+                <input value="<?php echo $precoSkateEdit[0] ?>" name="itemEditPreco"> <br>
+            </li>
+            <input type="hidden" id="hiddenField" value="<?php echo $idSkateEdit[0] ?>" name="itemId">
+            <li>
+                 <input type="submit" value="editar" class="btn btn-outline-success" name="editar">
+            </li>
+        </form>
     </ul>
 </div>
+
+<?php
+    if(isset($_GET['mensagemSkate'])){
+        include_once '../msg.php';
+        $_GET['mensagemSkate'];
+        echo mostraMensagem($_GET['mensagemSkate']);
+    }
+?>
 
 </body>
 </html>

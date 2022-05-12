@@ -36,7 +36,7 @@ include_once '../database/skateboard.php';
   </thead>
 <?php 
 if($result = mysqli_query($conn, $sqlSkate)){
-    while($linha = mysqli_fetch_array($result)){          
+    while($linha = mysqli_fetch_assoc($result)){    
 ?>
 <tr>
   <td><?php echo $linha['id']?></td>

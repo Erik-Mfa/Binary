@@ -10,7 +10,7 @@ if(isset($_GET['tipo'])){
             case'truck':
                 $sqlTrucks = "SELECT * FROM skateboard_tb WHERE tipo='$listItems'";
                 if($result = mysqli_query($conn, $sqlTrucks)){
-                    while($linha = mysqli_fetch_array($result)){
+                    while($linha = mysqli_fetch_assoc($result)){
                         $imagemItemList[] = $linha['imagem'];
                         $idItemList[] = $linha['id'];
                         
@@ -21,7 +21,7 @@ if(isset($_GET['tipo'])){
             case'rolamento':
                 $sqlRolamentos = "SELECT * FROM skateboard_tb WHERE tipo='$listItems'";
                 if($result = mysqli_query($conn, $sqlRolamentos)){
-                    while($linha = mysqli_fetch_array($result)){
+                    while($linha = mysqli_fetch_assoc($result)){
                         $imagemItemList[] = $linha['imagem'];
                         $idItemList[] = $linha['id'];
                     }
@@ -31,7 +31,7 @@ if(isset($_GET['tipo'])){
             case'roda':
                 $sqlRodas = "SELECT * FROM skateboard_tb WHERE tipo='$listItems'";
                 if($result = mysqli_query($conn, $sqlRodas)){
-                    while($linha = mysqli_fetch_array($result)){
+                    while($linha = mysqli_fetch_assoc($result)){
                         $imagemItemList[] = $linha['imagem'];
                         $idItemList[] = $linha['id'];
                     }
@@ -41,7 +41,7 @@ if(isset($_GET['tipo'])){
             case'lixa':
                 $sqlLixas = "SELECT * FROM skateboard_tb WHERE tipo='$listItems'";
                 if($result = mysqli_query($conn, $sqlLixas)){
-                    while($linha = mysqli_fetch_array($result)){
+                    while($linha = mysqli_fetch_assoc($result)){
                         $imagemItemList[] = $linha['imagem'];
                         $idItemList[] = $linha['id'];
                     }
@@ -51,7 +51,7 @@ if(isset($_GET['tipo'])){
             case'shape':
                 $sqlShapes = "SELECT * FROM skateboard_tb WHERE tipo='$listItems'";
                 if($result = mysqli_query($conn, $sqlShapes)){
-                    while($linha = mysqli_fetch_array($result)){
+                    while($linha = mysqli_fetch_assoc($result)){
                         $imagemItemList[] = $linha['imagem'];
                         $idItemList[] = $linha['id'];
                     }   

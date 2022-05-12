@@ -23,6 +23,7 @@
 <div class="text-center fonte">
     <h1>Seja bem vindo, <?php echo $_SESSION['userName'];?>!</h1>
     <h4>Menu do administrador:</h4>
+    <a class="btn btn-outline-success mt-2 mb-2" href="edit.php">Editar Produtos</a>
 </div>
 <div>
     <div class="border">
@@ -152,8 +153,7 @@
                             ?>
                         </div>
                     </div>
-             </form>
-             <a class="btn btn-outline-success mt-2" href="edit.php">Editar</a>
+             </form>        
     </div>
     
 </div>

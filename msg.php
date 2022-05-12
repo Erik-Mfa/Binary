@@ -25,6 +25,12 @@ function mostraMensagem($mensagem){
         case 'cadastrofracasso':
             $retorno = "<p class='fonte'>Houve um erro no cadastro!</p>";
             break;
+        case 'edicaosucesso':
+            $retorno = "<p class='fonte'>Alteração Feita com sucesso!</p>";
+            break;
+        case 'edicaonenhuma':
+            $retorno = "<p class='fonte'>Nada foi alterado!</p>";
+            break;
         default: 
             $retorno = "";
             break;

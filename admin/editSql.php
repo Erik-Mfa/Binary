@@ -2,7 +2,7 @@
 include_once '../database/conn.php';
 include_once '../database/skateboard.php';
 
-if(isset($_GET['edit'])){
+if(isset($_GET['edit'] )){
     $editId = $_GET['edit'];
     $sqlSkateEdit = "SELECT * FROM skateboard_tb WHERE id='$editId'";
     if($result = mysqli_query($conn, $sqlSkateEdit)){
@@ -17,6 +17,7 @@ if(isset($_GET['edit'])){
             }
         }
     }
+
  
     if(isset($_POST['editar'])){
         $editSkateNome = $_POST['itemEditNome'];
@@ -31,12 +32,12 @@ if(isset($_GET['edit'])){
         WHERE id = $idItem";
 
         $result = mysqli_query($conn, $editSkateSql);
-
+    
         if (mysqli_affected_rows($conn) > 0){
-            header('location:editItem.php?mensagemSkate=cadastrosucesso?edit='.$idItem);
-          } else {
-            header('location:editItem.php?mensagemSkate=cadastrofracasso?edit='.$idItem);
-          }
+        header('location:editItem.php?mensagemSkate=edicaosucesso&edit='.$idItem);
+    } else {
+        header('location:editItem.php?mensagemSkate=edicaonenhuma&edit='.$idItem);
+    }
 
     }
 

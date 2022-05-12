@@ -28,29 +28,30 @@ include_once 'editSql.php';
 <div class='d-flex justify-content-center fonte'>
     <ul class='list-group list-group-flush '>
         <form action="editSql.php" method="post">
-            <li class='list-group-item'>
-                <img class='img-fluid' src='../imagens/<?php   echo $imagemSkateEdit[0]; ?>' width='500' height='500'>
+            <li class='list-group-item d-flex justify-content-center'>
+                <img class='img-fluid' src='../imagens/<?php   echo $imagemSkateEdit[0]; ?>' width='300' height='300'>
             </li>
-            <li class='list-group-item'>
+            <li class='list-group-item d-flex justify-content-center'>
                 <input value="<?php echo $nomeSkateEdit[0] ?>" type="text" name="itemEditNome"><br>
             </li>
-            <li class='list-group-item'>
+            <li class='list-group-item d-flex justify-content-center'>
                 <input value="<?php echo $tipoSkateEdit[0] ?>" name="itemEditTipo"><br>
             </li>
-            <li class='list-group-item'>
+            <li class='list-group-item d-flex justify-content-center'>
                 <input value="<?php echo $marcaSkateEdit[0] ?>" name="itemEditMarca"> <br>
             </li>
-            <li class='list-group-item'>
+            <li class='list-group-item d-flex justify-content-center'>
                 <input value="<?php echo $precoSkateEdit[0] ?>" name="itemEditPreco"> <br>
             </li>
             <input type="hidden" id="hiddenField" value="<?php echo $idSkateEdit[0] ?>" name="itemId">
-            <li>
-                 <input type="submit" value="editar" class="btn btn-outline-success" name="editar">
+            <li class='d-flex justify-content-center mb-5 mt-5'>
+                 <input type="submit" value="Editar" class="btn btn-outline-success mr-1" name="editar">
+                 <a href='edit.php' class='btn btn-outline-success ml-1'>Voltar</a>
             </li>
         </form>
     </ul>
 </div>
-
+<div class='d-flex justify-content-center'>
 <?php
     if(isset($_GET['mensagemSkate'])){
         include_once '../msg.php';
@@ -58,6 +59,6 @@ include_once 'editSql.php';
         echo mostraMensagem($_GET['mensagemSkate']);
     }
 ?>
-
+</div>
 </body>
 </html>

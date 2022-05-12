@@ -27,11 +27,12 @@ include_once '../database/skateboard.php';
 <!-- skateboard edit table -->
 <table class="table">
   <thead class="thead-dark">
-    <tr>
+    <tr class="fonte">
       <th scope="col">ID</th>
       <th scope="col">Nome</th>
       <th scope="col">Preço</th>
       <th scope="col">Marca</th>
+      <th scope="col"><a href='admin.php' class='btn btn-outline-success ml-1'>Voltar</a></th>
     </tr>
   </thead>
 <?php 

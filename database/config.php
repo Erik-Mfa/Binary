@@ -1,6 +1,6 @@
 <?php  
     define('HOST', 'localhost');
     define('USERNAME', 'root');		
-    define('PASSWORD', 'batatis19023');			
+    define('PASSWORD', 'Erik23032003');			
     define('DBNAME', 'binary');	
 ?>

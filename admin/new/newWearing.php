@@ -1,8 +1,8 @@
 <?php
-include_once '../database/conn.php';
+include_once '../../database/conn.php';
 
   if(!isset($_POST['cadastrarProduto']) || empty($_POST['newTipoWearing']) || empty($_POST['newMarcaWearing']) || empty($_POST['newPrecoWearing']) || empty($_POST['newTamanhoWearing']) || empty($_POST['newNomeWearing']) || empty($_FILES['newImagemWearing'])){
-    header('location:admin.php?mensagemProduto=cadastroembranco');
+    header('location:new.php?mensagemProduto=cadastroembranco');
   } else {
     $conn = conectar();
     $erro = 0;
@@ -16,7 +16,7 @@ include_once '../database/conn.php';
     $wearingImage = $_FILES['newImagem']['nameWearing'];
 
     /*********************cadastro de imagens ***********************/
-    $targetDir = "../imagens/";
+    $targetDir = "../../imagens/";
     $targetFile = $targetDir . basename($_FILES['newImagemWearing']['name']);
     $ok = 1;
     $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
@@ -50,7 +50,7 @@ include_once '../database/conn.php';
 
     //se passou pelas verificações ele faz o upload da imagem
     if ($ok == 0) {
-      header("Location: admin.php");
+      header("Location: new.php");
       } else {
         if (move_uploaded_file($_FILES['newImagemWearing']['tmp_name'], $targetFile)) {
           $ok = 2;
@@ -61,16 +61,16 @@ include_once '../database/conn.php';
 
     switch($fileError){
       case'0':
-        header('location:admin.php?mensagemProduto=imagemexiste');
+        header('location:new.php?mensagemProduto=imagemexiste');
         break;
       case'1':
-        header('location:admin.php?mensagemProduto=imagemgrande');
+        header('location:new.php?mensagemProduto=imagemgrande');
         break;
       case'2':
-        header('location:admin.php?mensagemProduto=formatonaopermitido');
+        header('location:new.php?mensagemProduto=formatonaopermitido');
         break;
       case'3':
-        header('location:admin.php?mensagemProduto=erroenvioimagem');
+        header('location:new.php?mensagemProduto=erroenvioimagem');
         break;
     }
 
@@ -82,9 +82,9 @@ include_once '../database/conn.php';
     $result = mysqli_query($conn, $wearingSql);
 
     if (mysqli_affected_rows($conn) > 0){
-      header('location:admin.php?mensagemProduto=cadastrosucesso');
+      header('location:new.php?mensagemProduto=cadastrosucesso');
     } else {
-      header('location:admin.php?mensagemProduto=cadastrofracasso');
+      header('location:new.php?mensagemProduto=cadastrofracasso');
     }
   } 
   

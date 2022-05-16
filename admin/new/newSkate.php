@@ -1,8 +1,8 @@
 <?php
-include_once '../database/conn.php';
+include_once '../../database/conn.php';
 
   if(!isset($_POST['cadastrarSkate']) || empty($_POST['newTipoSkate']) || empty($_POST['newMarcaSkate']) || empty($_POST['newPrecoSkate']) || empty($_POST['newNomeSkate']) || empty($_POST['newPromocaoSkate']) || empty($_FILES['newImagemSkate'])){
-    header('location:admin.php?mensagemProduto=cadastroembranco');
+    header('location:new.php?mensagemSkate=cadastroembranco');
   } else {
     $conn = conectar();
     $erro = 0;
@@ -15,7 +15,7 @@ include_once '../database/conn.php';
     $skateImage = $_FILES['newImagemSkate']['name'];
 
     /*********************cadastro de imagens ***********************/
-    $targetDir = "../imagens/";
+    $targetDir = "../../imagens/";
     $targetFile = $targetDir . basename($_FILES['newImagemSkate']['name']);
     $ok = 1;
     $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
@@ -49,7 +49,7 @@ include_once '../database/conn.php';
 
     //se passou pelas verificações ele faz o upload da imagem
     if ($ok == 0) {
-      header("Location: admin.php");
+      header("Location: new.php");
       } else {
         if (move_uploaded_file($_FILES['newImagemSkate']['tmp_name'], $targetFile)) {
           $ok = 2;
@@ -60,16 +60,16 @@ include_once '../database/conn.php';
 
     switch($fileError){
       case'0':
-        header('location:admin.php?mensagemSkate=imagemexiste');
+        header('location:new.php?mensagemSkate=imagemexiste');
         break;
       case'1':
-        header('location:admin.php?mensagemSkate=imagemgrande');
+        header('location:new.php?mensagemSkate=imagemgrande');
         break;
       case'2':
-        header('location:admin.php?mensagemSkate=formatonaopermitido');
+        header('location:new.php?mensagemSkate=formatonaopermitido');
         break;
       case'3':
-        header('location:admin.php?mensagemSkate=erroenvioimagem');
+        header('location:new.php?mensagemSkate=erroenvioimagem');
         break;
     }
 
@@ -81,9 +81,9 @@ include_once '../database/conn.php';
     $result = mysqli_query($conn, $skateSql);
 
     if (mysqli_affected_rows($conn) > 0){
-      header('location:admin.php?mensagemSkate=cadastrosucesso');
+      header('location:new.php?mensagemSkate=cadastrosucesso');
     } else {
-      header('location:admin.php?mensagemSkate=cadastrofracasso');
+      header('location:new.php?mensagemSkate=cadastrofracasso');
     }
   } 
   

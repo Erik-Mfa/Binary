@@ -31,6 +31,12 @@ function mostraMensagem($mensagem){
         case 'edicaonenhuma':
             $retorno = "<p class='fonte'>Nada foi alterado!</p>";
             break;
+        case 'deletesucesso':
+            $retorno = "<p class='fonte'>Deletar com sucesso!</p>";
+            break;
+        case 'deletenenhuma':
+            $retorno = "<p class='fonte'>Nada foi deletado!</p>";
+            break;
         default: 
             $retorno = "";
             break;

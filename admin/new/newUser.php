@@ -1,8 +1,8 @@
 <?php
-include_once '../database/conn.php';
+include_once '../../database/conn.php';
 
   if(isset($_POST['cadastrarUsuario']) || empty($_POST['newNome']) || empty($_POST['newUsuario']) || empty($_POST['newSenha']) || empty($_POST['newNivel']) || empty($_POST['newEmail'])){
-    header('location:../admin.php?mensagemUsuario=cadastroembranco');
+    header('location:new.php?mensagemUsuario=cadastroembranco');
   } else {
 
     $userName = $_POST['newNome'];
@@ -18,9 +18,9 @@ include_once '../database/conn.php';
     $result = mysqli_query($conn, $userSql);
 
     if (mysqli_affected_rows($conn) > 0){
-      header('location:../admin.php?mensagemUsuario=cadastrosucesso');
+      header('location:new.php?mensagemUsuario=cadastrosucesso');
     } else {
-      header('location:../admin.php?mensagemUsuario=cadastrofracasso');
+      header('location:new.php?mensagemUsuario=cadastrofracasso');
     }
   }
 
